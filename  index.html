@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>NICKxEDITS | Cricket Hub</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:white;font-family:Arial,sans-serif}
+header{background:#111;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #e32222}
+.logo{font-size:25px;font-weight:900;letter-spacing:1px}
+.logo span{color:#f22}
+nav a{color:white;text-decoration:none;margin-left:15px;font-size:13px}
+.hero{padding:35px 5%;background:linear-gradient(120deg,#330707,#090909)}
+.hero img{width:100%;max-height:370px;object-fit:contain;border-radius:12px}
+.hero h1{font-size:35px;margin-bottom:8px}
+.hero h1 span{color:#f22}
+.hero p{color:#ccc}
+.btn{display:inline-block;background:#e32222;color:white;padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:bold;margin-top:10px}
+section{padding:35px 5%}
+h2{border-left:4px solid #ed2525;padding-left:12px}
+.sub{color:#aaa;font-size:14px}
+.panel{background:#151515;border:1px solid #333;border-radius:12px;padding:16px;margin-top:18px}
+.widget{width:100%;min-height:310px;overflow:hidden;display:flex;justify-content:center}
+.widget.vertical{min-height:610px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:#171717;border:1px solid #333;padding:17px;border-radius:10px}
+.card h3{color:#ff4242}
+footer{text-align:center;padding:25px;background:#111;color:#aaa;border-top:1px solid #333;font-size:13px}
+@media(max-width:650px){
+ header{align-items:flex-start;gap:12px;flex-direction:column}
+ nav a{margin:0 12px 0 0}
+ .cards{grid-template-columns:1fr}
+ .hero h1{font-size:29px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">NICK<span style="color:#f22">x</span>EDITS</div>
+ <nav>
+  <a href="#live">Live Scores</a>
+  <a href="#matches">Matches</a>
+  <a href="#about">About</a>
+ </nav>
+</header>
+
+<div class="hero">
+ <img src="logo.jpg" alt="NICKxEDITS official cricket artwork">
+ <h1>WELCOME TO <span>NICKxEDITS</span></h1>
+ <p>Your destination for cricket live scores, matches and results.</p>
+ <a class="btn" href="#live">EXPLORE LIVE SCORES</a>
+</div>
+
+<section id="live">
+ <h2>🔴 LIVE CRICKET SCORES</h2>
+ <p class="sub">Follow the latest cricket action.</p>
+ <div class="panel">
+  <h3>Live Match Updates</h3>
+  <div class="widget">
+   <script src="https://cdorgapi.b-cdn.net/widgets/score.js"></script>
+  </div>
+ </div>
+ <div class="panel">
+  <h3>Fixtures | Live | Results</h3>
+  <div class="widget vertical">
+   <script src="https://cdorgapi.b-cdn.net/widgets/vmatchlist.js"></script>
+  </div>
+ </div>
+</section>
+
+<section id="matches">
+ <h2>🏏 MATCH CENTRE</h2>
+ <div class="cards">
+  <div class="card">
+   <h3>Upcoming Matches</h3>
+   <p>Check upcoming cricket fixtures.</p>
+  </div>
+  <div class="card">
+   <h3>Live Matches</h3>
+   <p>Follow ongoing cricket matches.</p>
+  </div>
+  <div class="card">
+   <h3>Match Results</h3>
+   <p>Catch up on completed matches.</p>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <h2>ABOUT NICKxEDITS</h2>
+ <div class="panel">
+  <p>NICKxEDITS is a cricket information platform for fans who want to follow live scores, fixtures and match results.</p>
+  <p class="sub">Live match data is provided by an external service. NICKxEDITS is an independent cricket website and is not affiliated with any official cricket board.</p>
+ </div>
+</section>
+
+<footer>
+ <strong>NICKxEDITS</strong>
+ <p>CRICKET • LIVE SCORES • MATCH UPDATES</p>
+ <p>© <span id="year"></span> NICKxEDITS</p>
+</footer>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
