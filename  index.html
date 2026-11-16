@@ -3,44 +3,45 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<title>NICKxEDITS | Cricket Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>NICKxEDITS | Live Cricket</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#090909;color:white;font-family:Arial,sans-serif}
-header{background:#111;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #e32222}
-.logo{font-size:25px;font-weight:900;letter-spacing:1px}
-.logo span{color:#f22}
+body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
+header{background:#111;padding:18px 5%;border-bottom:2px solid #e32626;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:900}
+.logo span{color:#ed2929}
 nav a{color:white;text-decoration:none;margin-left:15px;font-size:13px}
-.hero{padding:35px 5%;background:linear-gradient(120deg,#330707,#090909)}
-.hero img{width:100%;max-height:370px;object-fit:contain;border-radius:12px}
-.hero h1{font-size:35px;margin-bottom:8px}
-.hero h1 span{color:#f22}
-.hero p{color:#ccc}
-.btn{display:inline-block;background:#e32222;color:white;padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:bold;margin-top:10px}
+.hero{padding:65px 6%;background:linear-gradient(120deg,#350707,#111,#080808)}
+.tag{color:#ff4949;font-weight:bold;letter-spacing:3px}
+.hero h1{font-size:clamp(35px,7vw,65px);margin:12px 0}
+.hero h1 span{color:#ed2929}
+.hero p{color:#ccc;font-size:16px}
+.btn{display:inline-block;background:#e32626;color:white;text-decoration:none;padding:13px 22px;border-radius:6px;font-weight:bold;margin-top:15px}
 section{padding:35px 5%}
-h2{border-left:4px solid #ed2525;padding-left:12px}
-.sub{color:#aaa;font-size:14px}
-.panel{background:#151515;border:1px solid #333;border-radius:12px;padding:16px;margin-top:18px}
-.widget{width:100%;min-height:310px;overflow:hidden;display:flex;justify-content:center}
-.widget.vertical{min-height:610px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.card{background:#171717;border:1px solid #333;padding:17px;border-radius:10px}
-.card h3{color:#ff4242}
-footer{text-align:center;padding:25px;background:#111;color:#aaa;border-top:1px solid #333;font-size:13px}
+h2{border-left:4px solid #ed2929;padding-left:13px}
+.muted{color:#aaa;font-size:14px}
+.panel{background:#151515;border:1px solid #333;border-radius:12px;padding:18px;margin-top:20px}
+.widget{background:#fff;color:#111;border-radius:8px;min-height:300px;overflow:auto;display:flex;justify-content:center}
+.widget.tall{min-height:620px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:#151515;border:1px solid #333;border-radius:10px;padding:18px}
+.card h3{color:#ff4141}
+footer{background:#111;border-top:2px solid #e32626;text-align:center;padding:28px;color:#aaa}
 @media(max-width:650px){
- header{align-items:flex-start;gap:12px;flex-direction:column}
+ header{display:block}
+ nav{margin-top:14px}
  nav a{margin:0 12px 0 0}
  .cards{grid-template-columns:1fr}
- .hero h1{font-size:29px}
+ .hero{padding:45px 6%}
 }
 </style>
 </head>
 <body>
 
 <header>
- <div class="logo">NICK<span style="color:#f22">x</span>EDITS</div>
+ <div class="logo">NICK<span>x</span>EDITS</div>
  <nav>
   <a href="#live">Live Scores</a>
   <a href="#matches">Matches</a>
@@ -49,60 +50,66 @@ footer{text-align:center;padding:25px;background:#111;color:#aaa;border-top:1px 
 </header>
 
 <div class="hero">
- <img src="logo.jpg" alt="NICKxEDITS official cricket artwork">
- <h1>WELCOME TO <span>NICKxEDITS</span></h1>
- <p>Your destination for cricket live scores, matches and results.</p>
- <a class="btn" href="#live">EXPLORE LIVE SCORES</a>
+ <div class="tag">WELCOME TO THE CRICKET HUB</div>
+ <h1>CRICKET <span>LIVE.</span><br>EVERY MOMENT.</h1>
+ <p>Follow live cricket scores, upcoming fixtures and match results.</p>
+ <a class="btn" href="#live">VIEW LIVE SCORES ↓</a>
 </div>
 
 <section id="live">
+ <div class="tag">LIVE MATCH CENTRE</div>
  <h2>🔴 LIVE CRICKET SCORES</h2>
- <p class="sub">Follow the latest cricket action.</p>
+ <p class="muted">Follow the latest available match updates.</p>
+
  <div class="panel">
-  <h3>Live Match Updates</h3>
+  <h3>Live Score Updates</h3>
   <div class="widget">
    <script src="https://cdorgapi.b-cdn.net/widgets/score.js"></script>
   </div>
  </div>
+
  <div class="panel">
-  <h3>Fixtures | Live | Results</h3>
-  <div class="widget vertical">
+  <h3>Fixtures • Live • Results</h3>
+  <div class="widget tall">
    <script src="https://cdorgapi.b-cdn.net/widgets/vmatchlist.js"></script>
   </div>
  </div>
 </section>
 
 <section id="matches">
+ <div class="tag">ALL THE ACTION</div>
  <h2>🏏 MATCH CENTRE</h2>
  <div class="cards">
   <div class="card">
-   <h3>Upcoming Matches</h3>
-   <p>Check upcoming cricket fixtures.</p>
+   <h3>📅 Upcoming</h3>
+   <p>Explore scheduled cricket matches.</p>
   </div>
   <div class="card">
-   <h3>Live Matches</h3>
-   <p>Follow ongoing cricket matches.</p>
+   <h3>🔴 Live</h3>
+   <p>Follow ongoing matches and scores.</p>
   </div>
   <div class="card">
-   <h3>Match Results</h3>
-   <p>Catch up on completed matches.</p>
+   <h3>🏆 Results</h3>
+   <p>Check completed match results.</p>
   </div>
  </div>
 </section>
 
 <section id="about">
+ <div class="tag">OUR PLATFORM</div>
  <h2>ABOUT NICKxEDITS</h2>
  <div class="panel">
-  <p>NICKxEDITS is a cricket information platform for fans who want to follow live scores, fixtures and match results.</p>
-  <p class="sub">Live match data is provided by an external service. NICKxEDITS is an independent cricket website and is not affiliated with any official cricket board.</p>
+  <p>NICKxEDITS is a cricket information platform created for cricket fans.</p>
+  <p class="muted">Live scores and match information are supplied by an external data provider. NICKxEDITS is an independent website and is not affiliated with any official cricket board.</p>
  </div>
 </section>
 
 <footer>
- <strong>NICKxEDITS</strong>
+ <h3>NICK<span style="color:#ed2929">x</span>EDITS</h3>
  <p>CRICKET • LIVE SCORES • MATCH UPDATES</p>
  <p>© <span id="year"></span> NICKxEDITS</p>
 </footer>
+
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 </script>
