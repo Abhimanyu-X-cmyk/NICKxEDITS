@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="NICKxEDITS - Cricket Live Scores, Fixtures and Results">
+<title>NICKxEDITS | Cricket Centre</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red: #e32636;
+  --black: #090909;
+  --panel: #151515;
+  --text: #ffffff;
+  --muted: #aaaaaa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #101010;
+  border-bottom: 1px solid #292929;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.brand span {
+  color: var(--red);
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+  padding: 75px 20px 65px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, #351014 0%, #090909 70%);
+}
+
+.hero-tag {
+  display: inline-block;
+  color: #ff737c;
+  background: #281014;
+  border: 1px solid #6c252d;
+  padding: 9px 16px;
+  border-radius: 30px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 8vw, 65px);
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  color: #bdbdbd;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 15px 5%;
+  background: #111;
+  border-bottom: 1px solid #292929;
+}
+
+nav a {
+  white-space: nowrap;
+  color: white;
+  text-decoration: none;
+  padding: 11px 17px;
+  background: #242424;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+nav a:hover {
+  background: var(--red);
+}
+
+/* MAIN */
+
+main {
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  padding: 30px 16px 55px;
+}
+
+.section {
+  margin-bottom: 38px;
+  scroll-margin-top: 85px;
+}
+
+.section h2 {
+  font-size: 22px;
+  border-left: 4px solid var(--red);
+  padding-left: 12px;
+  margin-bottom: 17px;
+}
+
+.section p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.widget-box {
+  background: var(--panel);
+  border: 1px solid #303030;
+  border-radius: 14px;
+  padding: 15px;
+  overflow: hidden;
+  min-height: 180px;
+}
+
+.notice {
+  background: #1c1012;
+  border: 1px solid #572027;
+  padding: 15px;
+  border-radius: 10px;
+  color: #d5b9bc;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  background: #101010;
+  border-top: 1px solid #292929;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+footer strong {
+  color: white;
+}
+
+/* TELEGRAM POPUP */
+
+#telegramOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0,0,0,.88);
+  backdrop-filter: blur(9px);
+}
+
+#telegramBox {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  padding: 38px 25px 30px;
+  background: #141414;
+  border: 1px solid #3a2528;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(227,38,54,.18);
+  animation: popupIn .35s ease;
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: scale(.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#closePopup {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #292929;
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.popup-symbol {
+  width: 68px;
+  height: 68px;
+  margin: 5px auto 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: #291115;
+  border: 1px solid #74242d;
+  color: #ff4655;
+  font-size: 32px;
+}
+
+#telegramBox h2 {
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+
+#telegramBox p {
+  color: #bdbdbd;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+#joinTelegram {
+  display: block;
+  padding: 17px 12px;
+  border-radius: 12px;
+  background: var(--red);
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: .2s;
+}
+
+#joinTelegram:hover {
+  background: #bb1c2b;
+}
+
+.popup-note {
+  display: block;
+  color: #888;
+  font-size: 11px;
+  margin-top: 17px;
+}
+
+@media(max-width:480px) {
+  header {
+    padding: 16px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .hero {
+    padding: 55px 16px;
+  }
+
+  main {
+    padding: 24px 12px 40px;
+  }
+
+  #telegramBox {
+    padding: 35px 20px 27px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="brand">NICK<span>x</span>EDITS</div>
+  <a class="header-link" href="#live">CRICKET SCORES</a>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-tag">CRICKET SCORE CENTRE</div>
+
+  <h1>CRICKET <span>LIVE</span></h1>
+
+  <p>
+    Follow cricket scores, upcoming fixtures,
+    match results and cricket updates.
+  </p>
+</section>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <a href="#live">Live Scores</a>
+  <a href="#international">International</a>
+  <a href="#domestic">Domestic</a>
+  <a href="#fixtures">Fixtures & Results</a>
+  <a href="#about">About</a>
+</nav>
+
+<main>
+
+  <!-- LIVE SCORES -->
+
+  <section class="section" id="live">
+    <h2>🔴 Live Cricket Scores</h2>
+
+    <p>
+      Follow ongoing cricket matches and their latest
+      available score updates.
+    </p>
+
+    <div class="widget-box" id="liveScoreWidget">
+      <div id="cricket-live-scores"></div>
+
+      <!-- Cricket live score widget will be configured here -->
+      <p>Live score integration coming soon.</p>
+    </div>
+  </section>
+
+  <!-- INTERNATIONAL -->
+
+  <section class="section" id="international">
+    <h2>🌍 International Cricket</h2>
+
+    <p>
+      Follow available international Test, ODI and
+      T20 matches.
+    </p>
+
+    <div class="notice">
+      International match coverage will depend on
+      the available cricket data provider.
+    </div>
+  </section>
+
+  <!-- DOMESTIC -->
+
+  <section class="section" id="domestic">
+    <h2>🏏 Domestic Cricket</h2>
+
+    <p>
+      Explore available domestic cricket competitions
+      and match information.
+    </p>
+
+    <div class="notice">
+      Domestic competition coverage will be added
+      as supported data becomes available.
+    </div>
+  </section>
+
+  <!-- FIXTURES -->
+
+  <section class="section" id="fixtures">
+    <h2>📅 Fixtures & Results</h2>
+
+    <div class="widget-box">
+      <div id="cricket-fixtures"></div>
+      <p>Fixtures and results integration coming soon.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section" id="about">
+    <h2>About NICKxEDITS</h2>
+
+    <p>
+      NICKxEDITS is an independent cricket information
+      platform bringing match updates, fixtures and
+      results together.
+    </p>
+
+    <div class="notice">
+      NICKxEDITS is an independent platform and is
+      not affiliated with the ICC, BCCI or any
+      official cricket board.
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <strong>NICKxEDITS</strong><br>
+  Cricket Scores • Fixtures • Results<br>
+  Independent Cricket Information Platform
+</footer>
+
+<!-- TELEGRAM POPUP -->
+
+<div id="telegramOverlay"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="popupTitle">
+
+  <div id="telegramBox">
+
+    <button id="closePopup"
+            aria-label="Close popup">
+      &times;
+    </button>
+
+    <div class="popup-symbol">✈</div>
+
+    <h2 id="popupTitle">
+      Join Our Community!
+    </h2>
+
+    <p>
+      For more information and amazing cricket edits,
+      follow our official Telegram channel for the
+      latest updates and announcements!
+    </p>
+
+    <a id="joinTelegram"
+       href="https://t.me/nickxedits"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      JOIN TELEGRAM &nbsp; ➜
+
+    </a>
+
+    <span class="popup-note">
+      Official NICKxEDITS Community
+    </span>
+
+  </div>
+</div>
+
+<!-- POPUP FUNCTIONALITY -->
+
+<script>
+(function() {
+
+  const overlay =
+    document.getElementById("telegramOverlay");
+
+  const close =
+    document.getElementById("closePopup");
+
+  function closePopup() {
+    overlay.style.display = "none";
+  }
+
+  close.addEventListener("click", closePopup);
+
+  overlay.addEventListener("click", function(event) {
+    if (event.target === overlay) {
+      closePopup();
+    }
+  });
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+      closePopup();
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>
